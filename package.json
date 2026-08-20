@@ -1,6 +1,6 @@
 {
   "name": "linkedin-slop-detector",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Production-quality, privacy-first browser extension that detects AI slop patterns and formulaic clichés in LinkedIn posts.",
   "private": true,
   "type": "module",
