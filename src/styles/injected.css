@@ -53,8 +53,8 @@ body.theme--dark {
 
 /* Post Action: Highlight */
 mark.lsd-highlight {
-  background-color: var(--lsd-amber-light, #fef08a) !important;
-  color: inherit !important;
+  background-color: var(--lsd-highlight-bg, var(--lsd-amber-light, #fef08a)) !important;
+  color: var(--lsd-highlight-text, #000000) !important;
   border-bottom: 2px solid var(--lsd-amber, #f59e0b) !important;
   border-radius: 2px !important;
   padding: 0 2px !important;
