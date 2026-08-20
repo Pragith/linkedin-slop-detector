@@ -1,0 +1,301 @@
+/* LinkedIn Slop Detector Injected Styles */
+
+:root {
+  --lsd-primary: #4f46e5;
+  --lsd-primary-hover: #4338ca;
+  --lsd-amber: #f59e0b;
+  --lsd-amber-light: #fef3c7;
+  --lsd-amber-dark: #b45309;
+  --lsd-bg-card: #ffffff;
+  --lsd-text-main: #1f2937;
+  --lsd-text-muted: #6b7280;
+  --lsd-border: #e5e7eb;
+  --lsd-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode overrides for LinkedIn dark theme */
+html[data-theme='dark'],
+html.theme--dark,
+body.theme--dark {
+  --lsd-bg-card: #1e293b;
+  --lsd-text-main: #f8fafc;
+  --lsd-text-muted: #94a3b8;
+  --lsd-border: #334155;
+  --lsd-amber-light: #451a03;
+}
+
+/* Post Action: Outline */
+.lsd-outline {
+  outline: 2px solid var(--lsd-outline-color, var(--lsd-amber)) !important;
+  outline-offset: -2px !important;
+  border-radius: 8px !important;
+  transition: outline 0.2s ease-in-out;
+}
+
+/* Post Action: Dim */
+.lsd-dimmed {
+  opacity: 0.38 !important;
+  filter: grayscale(40%) !important;
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+.lsd-dimmed:hover {
+  opacity: 0.85 !important;
+  filter: none !important;
+}
+
+/* Post Action: Hide */
+.lsd-hidden {
+  display: none !important;
+}
+
+/* Post Action: Highlight */
+mark.lsd-highlight {
+  background-color: var(--lsd-amber-light, #fef08a) !important;
+  color: inherit !important;
+  border-bottom: 2px solid var(--lsd-amber, #f59e0b) !important;
+  border-radius: 2px !important;
+  padding: 0 2px !important;
+  cursor: help;
+  transition: background-color 0.2s ease;
+}
+
+mark.lsd-highlight:hover {
+  filter: brightness(0.95);
+}
+
+/* Badge */
+.lsd-action-applied {
+  position: relative !important;
+}
+
+.lsd-badge {
+  position: absolute;
+  top: 12px;
+  right: 48px;
+  z-index: 100;
+}
+
+.lsd-badge-top-left {
+  left: 12px;
+  right: auto;
+}
+
+.lsd-badge-header {
+  top: 52px;
+}
+
+.lsd-badge-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--lsd-bg-card);
+  color: var(--lsd-text-main);
+  border: 1px solid var(--lsd-border);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.lsd-badge-trigger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.lsd-badge-score {
+  color: var(--lsd-amber-dark, #d97706);
+}
+
+.lsd-badge-count {
+  color: var(--lsd-text-muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Popover details breakdown */
+.lsd-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 320px;
+  background: var(--lsd-bg-card);
+  color: var(--lsd-text-main);
+  border: 1px solid var(--lsd-border);
+  border-radius: 8px;
+  box-shadow: var(--lsd-shadow);
+  padding: 12px;
+  z-index: 200;
+  text-align: left;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  cursor: default;
+}
+
+.lsd-popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--lsd-border);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.lsd-popover-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--lsd-text-main);
+}
+
+.lsd-popover-close {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--lsd-text-muted);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.lsd-popover-close:hover {
+  background: var(--lsd-border);
+}
+
+.lsd-badge-trigger:focus-visible,
+.lsd-popover-close:focus-visible,
+.lsd-placeholder-btn:focus-visible {
+  outline: 2px solid var(--lsd-primary);
+  outline-offset: 2px;
+}
+
+.lsd-popover-body {
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lsd-popover-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.lsd-popover-rule-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.lsd-popover-rule-name {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--lsd-text-main);
+}
+
+.lsd-popover-matched-text {
+  font-size: 11px;
+  color: var(--lsd-text-muted);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lsd-popover-score {
+  font-weight: 700;
+  color: var(--lsd-amber-dark, #d97706);
+  font-size: 12px;
+}
+
+.lsd-popover-bonus {
+  background: rgba(79, 70, 229, 0.08);
+  border-left: 3px solid var(--lsd-primary);
+}
+
+.lsd-popover-footer {
+  border-top: 1px solid var(--lsd-border);
+  margin-top: 8px;
+  padding-top: 6px;
+  font-size: 11px;
+  color: var(--lsd-text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Collapsed placeholder */
+.lsd-collapsed-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--lsd-bg-card);
+  border: 1px dashed var(--lsd-amber);
+  border-radius: 8px;
+  margin: 8px 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.lsd-placeholder-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.lsd-placeholder-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.lsd-placeholder-text strong {
+  font-size: 13px;
+  color: var(--lsd-text-main);
+}
+
+.lsd-placeholder-subtext {
+  font-size: 11px;
+  color: var(--lsd-text-muted);
+}
+
+.lsd-placeholder-btn {
+  background: var(--lsd-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lsd-placeholder-btn:hover {
+  background: var(--lsd-primary-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lsd-outline,
+  .lsd-dimmed,
+  mark.lsd-highlight,
+  .lsd-badge-trigger,
+  .lsd-placeholder-btn {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,78 @@
+name: Propose New Slop Rule
+description: Suggest a new pattern matching rule to detect LinkedIn clichés or formulaic writing
+title: 'feat(rules): add [rule name]'
+labels: ['rules', 'enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a new pattern! Please make sure your proposal includes real examples and counterexamples to avoid false positives.
+  - type: input
+    id: rule_name
+    attributes:
+      label: Rule Name
+      description: Descriptive, title-cased name for the rule.
+      placeholder: 'e.g. Negate Then Assert'
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - contrast
+        - canned-opener
+        - canned-conclusion
+        - dramatic-reveal
+        - faux-insight
+        - canned-exploration
+        - throat-clearing
+        - generic-world
+        - generic-bridge
+        - inflated-metaphor
+        - llm-vocabulary
+        - corporate-language
+        - empty-intensifier
+        - unsupported-authority
+        - scaffolding
+        - structural
+        - formatting
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: pattern
+    attributes:
+      label: Regular Expression Pattern
+      description: Provide the proposed regex pattern.
+      render: regex
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Positive Examples
+      description: Real-world LinkedIn phrases that SHOULD trigger this rule (at least 2).
+    validations:
+      required: true
+  - type: textarea
+    id: counter_examples
+    attributes:
+      label: Counterexamples (False-Positive Protection)
+      description: Ordinary English sentences using similar words that MUST NOT be flagged.
+    validations:
+      required: true
+  - type: input
+    id: weight
+    attributes:
+      label: Suggested Weight & Severity (1-5)
+      placeholder: 'e.g. Weight: 3, Severity: 3'
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale & Stylistic Context
+      description: Why does this pattern indicate formulaic slop rather than normal natural prose?
+    validations:
+      required: true

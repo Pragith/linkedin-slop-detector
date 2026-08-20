@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+build/
+# Legacy WXT output from older local builds
+.output/
+.wxt/
+dist/
+*.zip
+
+# Test coverage
+coverage/
+.playwright-cli/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE & editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Internal notes & plans
+*IMPLEMENTATION_PLAN*
+*implementation_plan*
+docs/internal/
+*.scratch.*

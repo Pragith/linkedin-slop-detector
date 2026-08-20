@@ -1,0 +1,24 @@
+name: Feature Request
+description: Suggest a new feature, settings enhancement, or platform expansion
+title: 'feat: [short feature title]'
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Motivation
+      description: Is your feature request related to a problem or workflow limitation?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed feature and how you envision it working.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Approaches
+      description: What other solutions or workarounds have you considered?
