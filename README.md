@@ -37,7 +37,19 @@ GitHub: [Pragith/linkedin-slop-detector](https://github.com/Pragith/linkedin-slo
 
 ## Screenshots
 
-Screenshots will be added with the first store submissions. The options page includes General, Detection, Rules, Appearance, Data, and About sections; the toolbar popup contains only live page counts and quick controls.
+### Detection in the LinkedIn feed
+
+| Highlighted match and score badge                                                                                             | Multiple contrast-pattern matches                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| ![A detected LinkedIn post with a highlighted phrase and Slop score badge](screenshots/detected-post-highlight-and-score.png) | ![A detected LinkedIn post with several highlighted contrast patterns](screenshots/detected-post-contrast-patterns.png) |
+
+### Explainable pattern breakdowns
+
+| Multiple rule families                                                                                                        | Strong template matches                                                                                                | Density and vocabulary signals                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ![Pattern breakdown showing several matched rule families and their scores](screenshots/pattern-breakdown-multiple-rules.png) | ![Pattern breakdown showing not-only-but and game-changer matches](screenshots/pattern-breakdown-strong-templates.png) | ![Pattern breakdown showing density, intensifier, and vocabulary signals](screenshots/pattern-breakdown-density-signals.png) |
+
+The extension highlights exact evidence and shows how each rule contributed to the score. It does not claim that a post was written by AI.
 
 ## Supported browsers
 

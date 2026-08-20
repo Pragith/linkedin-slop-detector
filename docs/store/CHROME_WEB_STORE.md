@@ -7,7 +7,7 @@ _Last Updated: 2026-08-20_
 ## 1. Store Metadata
 
 - **Extension Name**: LinkedIn Slop Detector
-- **Summary / Short Description**: Detects common AI-generated writing clichés, formulaic openers, and stylistic slop patterns in LinkedIn posts.
+- **Summary / Short Description**: Detects formulaic writing clichés, canned openers, and stylistic slop patterns in LinkedIn posts.
 - **Category**: Productivity / Social & Communication
 - **Primary Language**: English
 
@@ -51,6 +51,20 @@ Take back control of your LinkedIn feed with **LinkedIn Slop Detector** — a pr
 
 ---
 
-## 5. Version History
+## 5. Screenshot Assets
+
+| File                                     | Suggested caption                                               |
+| ---------------------------------------- | --------------------------------------------------------------- |
+| `detected-post-highlight-and-score.png`  | Exact phrase highlighting with an unobtrusive Slop score badge. |
+| `detected-post-contrast-patterns.png`    | Multiple contrast templates detected in a longer LinkedIn post. |
+| `pattern-breakdown-multiple-rules.png`   | Transparent scoring across several independent rule families.   |
+| `pattern-breakdown-strong-templates.png` | Detailed evidence for two strongly weighted template matches.   |
+| `pattern-breakdown-density-signals.png`  | Density and vocabulary signals listed with their score impact.  |
+
+The source images are stored in `screenshots/`. Store submissions may crop or resize copies to meet marketplace requirements, but should not alter the detection results shown.
+
+---
+
+## 6. Version History
 
 - **v0.1.0 (2026-08-20)**: Initial production release for Chrome, Firefox, Edge, and Brave with 61 built-in rules and full CRUD rule override management.
