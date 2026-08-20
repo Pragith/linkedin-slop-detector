@@ -1,4 +1,5 @@
 {
+  "pull-request-header": "Release Please prepared this release.",
   "packages": {
     ".": {
       "release-type": "node",
