@@ -16,8 +16,6 @@ If you’re a victim of AI slop, you deserve this add-on. If you’re creating A
 
 It can highlight, outline, dim, collapse, or completely hide sloppy posts. Every rule is configurable, and you can add your own.
 
-Runs locally. No LLM calls. No telemetry. Chrome, Firefox, Edge, and Brave. Open source.
-
 False positives? Oops. It’s LinkedIn. I’ll survive. Hopefully fewer impressions and less engagement become a wake-up call for people mass-producing this stuff.
 
 Use AI. Just have something to say.

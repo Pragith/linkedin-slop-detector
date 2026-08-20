@@ -102,7 +102,7 @@ describe('LinkedIn DOM Adapter and Post Renderer', () => {
     expect(text).not.toContain('Follow');
   });
 
-  it('applies non-destructive phrase highlighting and removes cleanly', () => {
+  it('applies contrast-safe non-destructive highlighting and removes cleanly', () => {
     document.body.innerHTML = `
       <div class="text-container">It is not just about AI.</div>
     `;
@@ -143,6 +143,9 @@ describe('LinkedIn DOM Adapter and Post Renderer', () => {
     expect(textEl.querySelector('mark.lsd-highlight')?.textContent).toBe(
       'It is not just',
     );
+    const lightHighlight = textEl.querySelector<HTMLElement>('mark.lsd-highlight')!;
+    expect(lightHighlight.style.getPropertyValue('--lsd-highlight-bg')).toBe('#FEF08A');
+    expect(lightHighlight.style.getPropertyValue('--lsd-highlight-text')).toBe('#000000');
     expect(extractPostText({ container: textEl, textElement: textEl, urn: null })).toBe(
       'It is not just about AI.',
     );
@@ -151,6 +154,11 @@ describe('LinkedIn DOM Adapter and Post Renderer', () => {
     removeHighlights(textEl);
     expect(textEl.querySelector('mark.lsd-highlight')).toBeNull();
     expect(textEl.textContent).toBe('It is not just about AI.');
+
+    applyHighlights(textEl, mockResult, '#1F2937');
+    const darkHighlight = textEl.querySelector<HTMLElement>('mark.lsd-highlight')!;
+    expect(darkHighlight.style.getPropertyValue('--lsd-highlight-bg')).toBe('#1F2937');
+    expect(darkHighlight.style.getPropertyValue('--lsd-highlight-text')).toBe('#FFFFFF');
   });
 
   it('injects badge and toggles breakdown popover', () => {

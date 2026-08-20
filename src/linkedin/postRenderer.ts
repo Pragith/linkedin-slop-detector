@@ -33,7 +33,8 @@ export function applyHighlights(
 
         const mark = document.createElement('mark');
         mark.className = 'lsd-highlight lsd-ui-element';
-        mark.style.backgroundColor = highlightColor;
+        mark.style.setProperty('--lsd-highlight-bg', highlightColor);
+        mark.style.setProperty('--lsd-highlight-text', readableTextColor(highlightColor));
         mark.title = `${match.ruleName} (+${match.weight})`;
         mark.dataset.lsdRule = match.ruleId;
         range.surroundContents(mark);
@@ -42,6 +43,20 @@ export function applyHighlights(
       }
     }
   }
+}
+
+function readableTextColor(backgroundColor: string): '#000000' | '#FFFFFF' {
+  const red = parseInt(backgroundColor.slice(1, 3), 16) / 255;
+  const green = parseInt(backgroundColor.slice(3, 5), 16) / 255;
+  const blue = parseInt(backgroundColor.slice(5, 7), 16) / 255;
+  const linearize = (channel: number) =>
+    channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+  const luminance =
+    0.2126 * linearize(red) + 0.7152 * linearize(green) + 0.0722 * linearize(blue);
+
+  // This WCAG-derived threshold chooses whichever of black or white has the
+  // greater contrast ratio against the configured highlight background.
+  return luminance > 0.179 ? '#000000' : '#FFFFFF';
 }
 
 export function removeHighlights(textElement: HTMLElement): void {
