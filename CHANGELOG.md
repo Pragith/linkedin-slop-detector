@@ -7,10 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.1](https://github.com/Pragith/linkedin-slop-detector/compare/v0.1.0...v0.1.1) (2026-08-20)
 
-
 ### Bug Fixes
 
-* **accessibility:** keep highlights readable in dark mode ([5828d0c](https://github.com/Pragith/linkedin-slop-detector/commit/5828d0ce8c9d71dc44b57aae9175a342615e26c8))
+- **accessibility:** keep highlights readable in dark mode ([5828d0c](https://github.com/Pragith/linkedin-slop-detector/commit/5828d0ce8c9d71dc44b57aae9175a342615e26c8))
 
 ## [0.1.0] - 2026-08-20
 
